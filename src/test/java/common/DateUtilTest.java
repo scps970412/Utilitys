@@ -37,7 +37,7 @@ public class DateUtilTest {
 
     @Test
     public void test2() {
-        String date = DateUtil.format("01 02 2022 ", "MM dd yyyy", "yyyy-MM-dd");
+        String date = DateUtil.format("01 02 2022", "MM dd yyyy", "yyyy-MM-dd");
         Assert.assertEquals("2022-01-02", date);
     }
 

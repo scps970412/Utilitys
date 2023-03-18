@@ -13,12 +13,9 @@ public class DateUtil {
      * @return 格式化結果
      */
     public static String format(String inDate, String inPattern, String outPatternString) {
-        String dateSeparatorRegex = "[ -/\\.]";
-        String tempDate = inDate.replaceAll(dateSeparatorRegex, "");
-        inPattern = inPattern.replaceAll(dateSeparatorRegex, "");
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern(inPattern);
-            LocalDate outputDate = LocalDate.parse(tempDate, formatter);
+            LocalDate outputDate = LocalDate.parse(inDate, formatter);
             DateTimeFormatter outFormatter = DateTimeFormatter.ofPattern(outPatternString);
             return outputDate.format(outFormatter);
         } catch (Exception e) {
